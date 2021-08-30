@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/favicon-16x16.png"
+    />
+    <link rel="manifest" href="src/site.webmanifest" />
+    <link rel="mask-icon" href="src/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>graphique circulaire</title>
+  </head>
+  <body class="bg-dark">
+    <h2 class="text-center display-4 text-white m-4">D3 Graph Circulaire</h2>
+    <br /><br />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mt-3 mr-5">
+          <form>
+            <div class="form-group">
+              <label class="text-white mb-1" for="nom">Nom de l'item</label>
+              <input type="text" class="form-control mb-2" id="nom" />
+            </div>
+            <div class="form-group">
+              <label class="text-white mb-1" for="prix">Prix de l'item</label>
+              <input type="text" class="form-control" id="prix" />
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary mt-4" type="submit">
+                Rajouter
+              </button>
+            </div>
+            <p class="text-white" id="erreur"></p>
+          </form>
+        </div>
+
+        <div class="col-md-5 ml-5">
+          <div class="box ml-5 mt-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDTzs7KJdxlIggcyzQcjiDzE-DVU1o9wbE",
+        authDomain: "d3-graphic.firebaseapp.com",
+        databaseURL: "https://d3-graphic.firebaseio.com",
+        projectId: "d3-graphic",
+        storageBucket: "d3-graphic.appspot.com",
+        messagingSenderId: "791052954896",
+        appId: "1:791052954896:web:3f11bdcff6dc65db678995",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="app.js"></script>
+    <script src="graph.js"></script>
+  </body>
+</html>
